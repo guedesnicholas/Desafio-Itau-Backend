@@ -24,4 +24,10 @@ public class TransacaoResource {
         return ResponseEntity.status(201).body(obj);
     }
 
+    @DeleteMapping
+    public ResponseEntity<Transacao> deleteAll(){
+        service.deleteAll();
+        return ResponseEntity.ok().build();
+    }
+
 }

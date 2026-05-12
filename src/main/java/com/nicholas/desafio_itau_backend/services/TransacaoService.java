@@ -18,4 +18,8 @@ public class TransacaoService {
         return repo.insert(obj);
     }
 
+    public void deleteAll(){
+        repo.deleteAll();
+    }
+
 }

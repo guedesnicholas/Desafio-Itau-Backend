@@ -16,4 +16,9 @@ public class TransacaoRepository {
         transacoes.add(obj);
         return obj;
     }
+
+    public void deleteAll(){
+        transacoes.clear();
+    }
+
 }
