@@ -3,6 +3,7 @@ package com.nicholas.desafio_itau_backend.resources;
 
 import com.nicholas.desafio_itau_backend.domain.Transacao;
 import com.nicholas.desafio_itau_backend.services.TransacaoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,9 @@ public class TransacaoResource {
 
 
     @PostMapping
-    public ResponseEntity<Transacao> insert(@RequestBody Transacao obj){
+    public ResponseEntity<Transacao> insert(@Valid @RequestBody Transacao obj){
         obj = service.insert(obj);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.status(201).body(obj);
     }
 
 }
